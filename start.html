@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commencer</title>
+    <link rel="stylesheet" href="start.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Entre ton nom</h1>
+        <input type="text" id="username" placeholder="Ton nom...">
+        <button onclick="continueGame()">Continuer</button>
+    </div>
+
+    <script>
+        function continueGame() {
+            const name = document.getElementById("username").value.trim();
+
+            if (name === "") {
+                alert("Entre ton nom avant de continuer");
+                return;
+            }
+
+            // Sauvegarde du nom dans le "compte"
+            localStorage.setItem("playerName", name);
+
+            // Redirection vers ton jeu
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

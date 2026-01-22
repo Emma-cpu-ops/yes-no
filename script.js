@@ -1,3 +1,19 @@
+// Récupération du nom
+const playerName = localStorage.getItem("playerName");
+
+// Si pas de nom → retour à la page start
+if (!playerName) {
+    window.location.href = "start.html";
+}
+
+// Affichage du nom
+document.addEventListener("DOMContentLoaded", () => {
+    const welcome = document.getElementById("welcome");
+    if (welcome) {
+        welcome.textContent = `Bienvenue ${playerName} ❤️`;
+    }
+});
+
 const messages = [
     "Are you sure?",
     "Really sure??",
